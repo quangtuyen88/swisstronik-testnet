@@ -27,6 +27,10 @@ async function main() {
   await tx.wait();
 
   console.log(`Minted ${mintAmount.toString()} tokens to ${recipient}`);
+
+  // Verify the token balance of the recipient
+  const tokenBalance = await token.balanceOf(recipient);
+  console.log(`Token balance of ${recipient}: ${tokenBalance.toString()}`);
 }
 
 // Define the sendShieldedTransaction function
